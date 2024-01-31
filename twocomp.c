@@ -33,6 +33,7 @@ int multiply(int num1, int num2){
 	}
 	
 	return product;
+}
 
 int main(){
 	int bin1, bin2;
@@ -40,6 +41,6 @@ int main(){
 	scanf("%d", &bin1);
 	printf("Enter another binary number: ");
 	scanf("%d", &bin2);
-	printf("The two's complement of %d * %d is %u\n", bin1, bin2, multiply(bin1, bin2));
+	printf("The two's complement of %d * %d is %u\n", bin1, bin2,multiply(bin1, bin2));
 	return 0;
 }
