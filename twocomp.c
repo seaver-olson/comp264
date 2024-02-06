@@ -28,7 +28,7 @@ int multiply(int num1, int num2){
 			product += num1;
 		}
 
-		num1 = num1 << 1;//multiplies num1 by 2
+		num1 = num1 * 10;
 		num2 = num2 >> 1;//divides num2 by 2
 	}
 	
