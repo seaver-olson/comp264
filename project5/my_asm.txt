@@ -1,0 +1,47 @@
+
+program:	file format mach-o 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+
+0000000100003f50 <_whatsNinePlusTen>:
+100003f50: 55                          	pushq	%rbp
+100003f51: 48 89 e5                    	movq	%rsp, %rbp
+100003f54: b8 15 00 00 00              	movl	$21, %eax
+100003f59: 5d                          	popq	%rbp
+100003f5a: c3                          	retq
+100003f5b: 90                          	nop
+100003f5c: 90                          	nop
+100003f5d: 90                          	nop
+100003f5e: 90                          	nop
+100003f5f: 90                          	nop
+
+0000000100003f60 <_main>:
+100003f60: 55                          	pushq	%rbp
+100003f61: 48 89 e5                    	movq	%rsp, %rbp
+100003f64: 48 83 ec 10                 	subq	$16, %rsp
+100003f68: c7 45 fc 00 00 00 00        	movl	$0, -4(%rbp)
+100003f6f: b0 00                       	movb	$0, %al
+100003f71: e8 da ff ff ff              	callq	0x100003f50 <_whatsNinePlusTen>
+100003f76: 89 c6                       	movl	%eax, %esi
+100003f78: 48 8d 3d 2f 00 00 00        	leaq	47(%rip), %rdi          ## 0x100003fae <dyld_stub_binder+0x100003fae>
+100003f7f: b0 00                       	movb	$0, %al
+100003f81: e8 08 00 00 00              	callq	0x100003f8e <dyld_stub_binder+0x100003f8e>
+100003f86: 31 c0                       	xorl	%eax, %eax
+100003f88: 48 83 c4 10                 	addq	$16, %rsp
+100003f8c: 5d                          	popq	%rbp
+100003f8d: c3                          	retq
+
+Disassembly of section __TEXT,__stubs:
+
+0000000100003f8e <__stubs>:
+100003f8e: ff 25 6c 40 00 00           	jmpq	*16492(%rip)            ## 0x100008000 <dyld_stub_binder+0x100008000>
+
+Disassembly of section __TEXT,__stub_helper:
+
+0000000100003f94 <__stub_helper>:
+100003f94: 4c 8d 1d 6d 40 00 00        	leaq	16493(%rip), %r11       ## 0x100008008 <__dyld_private>
+100003f9b: 41 53                       	pushq	%r11
+100003f9d: ff 25 5d 00 00 00           	jmpq	*93(%rip)               ## 0x100004000 <dyld_stub_binder+0x100004000>
+100003fa3: 90                          	nop
+100003fa4: 68 00 00 00 00              	pushq	$0
+100003fa9: e9 e6 ff ff ff              	jmp	0x100003f94 <__stub_helper>
