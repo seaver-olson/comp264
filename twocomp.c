@@ -36,7 +36,7 @@ int multiply(int num1, int num2){
 }
 
 int main(){
-	int bin1, bin2;
+	unsigned bin1, bin2;
 	printf("Enter a binary number: ");
 	scanf("%d", &bin1);
 	printf("Enter another binary number: ");
@@ -44,3 +44,4 @@ int main(){
 	printf("The two's complement of %d * %d is %u\n", bin1, bin2,multiply(bin1, bin2));
 	return 0;
 }
+
